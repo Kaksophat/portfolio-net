@@ -10,6 +10,9 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+import image1 from "../public/mobile.avif"
+import project1 from "../public/ecommerce-website-examples-featured-image.png"
+import { STATIC_STATUS_PAGE_GET_INITIAL_PROPS_ERROR } from "next/dist/lib/constants";
 
 export function Projects() {
   const projects = [
@@ -38,8 +41,8 @@ export function Projects() {
     {
       title: "E-commerce-php",
       description:
-        "",
-      image: "/placeholder.svg?height=300&width=500",
+        "e-commerce solution with user authentication, payment integration",
+      image: project1,
       technologies: ["PHP", "Tailwind CSS"],
       liveUrl: "#",
       githubUrl: "https://github.com/Sorn-Sophamarinet/E-commerce-php",
@@ -48,7 +51,7 @@ export function Projects() {
       title: "Moblie Banking",
       description:
         "A Java-based web application built with Spring Boot, featuring a responsive user interface and RESTful APIs for managing mobile banking operations like user accounts and transactions",
-      image: "/placeholder.svg?height=300&width=500",
+      image: image1,
       technologies: ["Spring", "Postgres"],
       liveUrl: "#",
       githubUrl: "https://github.com/Sorn-Sophamarinet/Homework-spring",
@@ -115,16 +118,18 @@ export function Projects() {
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <Button
+                 {  project.liveUrl === "#" ? "" : <Button
                       size="sm"
                       asChild
                       className="flex items-center gap-2 bg-white text-purple-900 hover:bg-gray-100 font-semibold rounded-full px-4 py-2 transition-all duration-300 hover:shadow-lg hover:scale-105"
                     >
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        
                         <ExternalLink className="w-4 h-4" />
-                        Live Demo
+                        {project.liveUrl === "#" ? "" : "Live Demo"}
                       </a>
                     </Button>
+}
                     <Button
                       size="sm"
                       variant="outline"
