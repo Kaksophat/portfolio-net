@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useCallback } from "react";
 import Image from "next/image";
+import hero1 from "../public/hero1.jpg"
 import {
   ArrowDown,
   Github,
@@ -27,10 +28,10 @@ export function Hero() {
           <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 animate-pulse">
             Portfolio.
           </span>
-          <div className="flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
+          <div className=" space-x-6 absolute left-1/2 transform -translate-x-1/2 md:flex  hidden ">
             <a
               href="#"
-              className="hover:text-purple-300 transition-all duration-300 hover:scale-110"
+              className="hover:text-purple-300 transition-all duration-300 hover:scale-110 "
             >
               Home
             </a>
@@ -97,23 +98,20 @@ export function Hero() {
         </div>
 
         {/* Image with Enhanced Animation */}
-        <div className="relative animate-slideInRight">
-          <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[30rem] lg:h-[30rem] bg-gradient-to-r from-purple-400 to-blue-400 rounded-3xl blur-2xl absolute -z-10 rotate-6 animate-pulse"></div>
+        <div className="relative ">
+          <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[30rem] lg:h-[30rem] bg-gradient-to-r from-purple-400 to-blue-400 rounded-3xl blur-2xl absolute -z-10 "></div>
           <Image
-            src="/img/image.png"
+            src={hero1}
             alt="Sorn Sophamarinet"
             width={400}
             height={400}
-            className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-3xl border-4 border-white/20 object-cover shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-2 backdrop-blur-sm animate-float"
+            className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-3xl border-4 border-white/20 object-cover shadow-2xl transition-all  backdrop-blur-sm "
           />
-          <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full animate-bounce"></div>
-          <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-bounce animation-delay-1000"></div>
+       
         </div>
       </div>
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-indigo-200/80 animate-bounce z-10">
-        <ArrowDown className="w-6 h-6" />
-      </div>
+     
     </div>
   );
 }

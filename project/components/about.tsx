@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+import hero2 from "../public/hero2.jpg"
 export function About() {
   return (
     <section
@@ -24,7 +25,7 @@ export function About() {
             <div className="relative">
               <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[30rem] lg:h-[30rem] bg-gradient-to-r from-indigo-200 to-purple-200 rounded-2xl blur-2xl absolute -z-10 opacity-60 -rotate-3 animate-pulse"></div>
               <Image
-                src="/img/image.png"
+                src={hero2}
                 alt="About Profile"
                 width={400}
                 height={400}
